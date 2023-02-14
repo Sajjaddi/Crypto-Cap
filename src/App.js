@@ -6,8 +6,8 @@ import { MarketUpdate } from "./components/MarketUpdate";
 
 const App = () => {
   return (
-    <>
-      <header>
+    <div className="bg-tara-prime text-white">
+      <header className="px-2 xs:px-4 py-2 flex justify-between items-center">
         <Header />
       </header>
       <main>
@@ -24,7 +24,7 @@ const App = () => {
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 };
 

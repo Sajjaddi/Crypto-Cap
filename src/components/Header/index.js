@@ -1,3 +1,6 @@
 import Header from "./Header";
+import LanguageSelector from "./LanguageSelector";
+import Nav from "./Nav";
+import ResponsiveNav from "./ResponsiveNav";
 
-export { Header };
+export { ResponsiveNav, Header, LanguageSelector, Nav };
