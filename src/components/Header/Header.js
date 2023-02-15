@@ -36,13 +36,15 @@ const Header = () => {
 
   return (
     <>
+      <div className="lg:hidden">
+        <ResponsiveNav data={data} />
+      </div>
       <h1 className="text-2xl">
         <span>{data.title.slice(0, -3)}</span>
         <span className="text-tara-second">{data.title.slice(-3)}</span>
       </h1>
-      <ResponsiveNav />
       <div className="hidden lg:block">
-      <Nav lang={data.lang} navs={data.navs} />
+        <Nav navs={data.navs} />
       </div>
     </>
   );

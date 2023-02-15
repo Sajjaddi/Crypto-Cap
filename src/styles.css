@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: Raleway;
+    src: url('./fonts/Raleway-Black.woff')
+    format('woff');
+    font-style: normal;
+    font-weight: 900;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('./fonts/Raleway-ExtraBold.woff')
+    format('woff');
+    font-style: normal;
+    font-weight: 800;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('./fonts/Raleway-SemiBold.woff')
+    format('woff');
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('./fonts/Raleway-Medium.woff')
+    format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: Raleway;
+    src: url('./fonts/Raleway-Light.woff')
+    format('woff');
+    font-style: normal;
+    font-weight: 300;
+}
+
+body{
+    font-family: Raleway;
+}

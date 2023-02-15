@@ -1,7 +1,7 @@
 import { LanguageSelector } from "../Header";
 import { Link } from "../Shared";
 
-const Nav = ({ navs, lang }) => {
+const Nav = ({ navs }) => {
   return (
     <>
       <nav className="">
@@ -11,7 +11,7 @@ const Nav = ({ navs, lang }) => {
           </Link>
         ))}
       </nav>
-      <LanguageSelector langData={lang} />
+      <LanguageSelector/>
       <Link>Login</Link>
     </>
   );

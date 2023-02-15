@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
-import SiteProvider from "./store/SiteProvider";
+import {SiteProvider } from "./store";
 import "./styles.css";
 
 const el = document.getElementById("root");

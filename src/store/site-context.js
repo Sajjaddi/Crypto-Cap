@@ -1,10 +1,11 @@
-import React from "react"
-const SiteContext = React.createContext({
-    cryptoData: {},
-    lang: [],
-    changeLang: ()=>{},
-    responsiveNav: null,
-    changeResponsiveNav : ()=> {},
-})
+import React from "react";
 
-export default SiteContext
+const SiteContext = React.createContext({
+  cryptoData: {},
+  lang: {},
+  responsiveNav: null,
+  setResponsiveNav: () => {},
+  setLang: () => {},
+});
+
+export default SiteContext;
