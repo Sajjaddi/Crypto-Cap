@@ -20,7 +20,7 @@ const LanguageSelector = () => {
   return (
     <div
       onClick={() => setIsOpenToSelect((prevState) => !prevState)}
-      className="flex gap-x-2 cursor-pointer relative w-1/2"
+      className="select-none flex gap-x-2 cursor-pointer relative w-1/2 z-[1]"
     >
       <TbWorld className="text-xl" />
       <div className="gap-x-1 flex items-center">
@@ -32,7 +32,7 @@ const LanguageSelector = () => {
         />
       </div>
       <div
-        className={`absolute flex flex-col [&>span:not(:last-child)]:border-b ease-in-out [&>span:not(:last-child)]:border-gray-400 top-[120%] inset-x-0 overflow-hidden bg-gray-800 py-1 px-2 text-white transition-all duration-300 rounded ${
+        className={`absolute flex flex-col [&>span:not(:last-child)]:border-b ease-in-out [&>span:not(:last-child)]:border-gray-400 top-[120%] inset-x-0 overflow-hidden bg-tara-fourth bg-opacity-80 py-1 px-2 text-white transition-all duration-300 rounded ${
           isOpenToSelect
             ? "translate-y-0 opacity-100"
             : "opacity-0 -translate-y-4 h-0 w-0"

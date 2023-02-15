@@ -10,13 +10,24 @@ import { SiteContext } from "./store";
 const App = () => {
   const { responsiveNav } = useContext(SiteContext);
 
+  const firstBrightness =
+    "after:content-[''] after:absolute after:right-0 after:h-full after:w-1/4 after:blur-[200px] after:bg-tara-firstBrightnessHero";
+  const secondBrightness =
+    "before:content-[''] before:absolute before:left-0 before:h-full before:w-1/4 before:blur-[200px] before:bg-tara-secondBrightnessHero";
+
   return (
-    <div className={`bg-tara-prime text-white ${responsiveNav && 'overflow-y-hidden'}`}>
+    <div
+      className={`bg-tara-prime text-white ${
+        responsiveNav && "overflow-y-hidden"
+      }`}
+    >
       <header className="px-2 xs:px-4 py-2 flex justify-between items-center">
         <Header />
       </header>
       <main>
-        <div>
+        <div
+          className={`flex flex-col items-center gap-y-8 mt-10 relative ${firstBrightness} ${secondBrightness}`}
+        >
           <Hero />
         </div>
         <div>

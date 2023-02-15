@@ -21,6 +21,8 @@ module.exports = {
           third: "#AE0000",
           fourth: "#211631",
           fifth: "#B6B6B6",
+          firstBrightnessHero: '#FF00C7',
+          secondBrightnessHero: '#7000FF'
         },
       },
     },

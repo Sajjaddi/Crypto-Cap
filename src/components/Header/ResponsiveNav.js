@@ -14,34 +14,34 @@ const ResponsiveNav = ({ data}) => {
   return (
     <>
       <div
-        className={`absolute h-full w-full inset-0 backdrop-blur-sm select-none ${
+        className={`absolute h-full w-full inset-0 z-[5] backdrop-blur-sm select-none ${
           responsiveNav ? "visible" : "invisible"
         }`}
       />
       <div
         onClick={handleResponsiveNav}
-        className="z-10 select-none flex flex-col gap-y-1.5 items-center cursor-pointer"
+        className="z-10 relative select-none flex flex-col gap-y-1.5 items-center cursor-pointer"
       >
         <span
-          className={`duration-200 left-0 w-7 h-0.5 bg-white -top-1 transition origin-left ${
-            responsiveNav && "rotate-45 w-[22.4px]"
+          className={`duration-300 left-0 w-7 h-0.5 bg-white -top-1 transition origin-left ${
+            responsiveNav && "rotate-45 w-[22.5px]"
           }`}
         ></span>
         <span
-          className={`duration-200 left-0 w-7 h-0.5 bg-white top-[5px] transition ${
+          className={`duration-300 left-0 w-7 h-0.5 bg-white top-[5px] transition ${
             responsiveNav && "invisible"
           }`}
         ></span>
         <span
-          className={`duration-200 left-0 w-7 h-0.5 bg-white top-3.5 transition origin-left ${
-            responsiveNav && "-rotate-45 w-[22.4px]"
+          className={`duration-300 left-0 w-7 h-0.5 bg-white top-3.5 transition origin-left ${
+            responsiveNav && "-rotate-45 w-[22.5px]"
           }`}
         ></span>
       </div>
       <nav
-        className={`absolute z-10 py-4 px-2 overflow-hidden top-0 bottom-0 right-0 transition-all duration-300  bg-tara-prime bg-opacity-50 backdrop-blur-md ${
+        className={`absolute z-10 py-4 px-2 overflow-hidden top-0 bottom-0 right-0 transition-all duration-[.4s] bg-tara-prime bg-opacity-50 backdrop-blur-md ${
           responsiveNav
-            ? "translate-x-0 visible w-2/3"
+            ? "translate-x-0 visible w-[70%]"
             : "invisible translate-x-full w-0"
         }`}
       >
