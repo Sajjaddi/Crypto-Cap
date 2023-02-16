@@ -1,3 +1,4 @@
+import { BiSearch } from "react-icons/bi";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -5,10 +6,14 @@ import { CategoryItem } from "../MarketUpdate";
 import { Button } from "../Shared";
 import { useFetchData } from "../Shared";
 
-const CategoriesList = ({ setCategory }) => {
+const CategoriesList = ({ setCategory, setSearchValue, searchValue }) => {
   const [isLoading, categories] = useFetchData(
     "https://api.coingecko.com/api/v3/coins/categories"
   );
+
+  const handleSeach = (e) => {
+    setSearchValue(e.target.value);
+  };
 
   const handleCategory = (cat) => {
     setCategory(cat);
@@ -43,6 +48,16 @@ const CategoriesList = ({ setCategory }) => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <div className="mx-2 xs:mx-4 relative bg-[#160C24] border border-[rgba(255,255,255,0.1)] rounded-md">
+          <BiSearch className="text-tara-fifth text-2xl absolute left-[10px] top-1/2 translate-y-[-50%]" />
+          <input
+            value={searchValue}
+            onChange={handleSeach}
+            className="bg-transparent text-tara-fifth pl-10 w-full h-full p-[10px] focus:border-none focus:outline-tara-second"
+            type={"text"}
+            placeholder="Search Coin"
+          />
+        </div>
       </div>
     </>
   );

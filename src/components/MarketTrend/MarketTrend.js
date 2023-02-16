@@ -8,7 +8,6 @@ const MarketTrend = () => {
       vs_currency: "usd",
       sparkline: true,
       per_page: 4,
-      price_change_percentage: "1h,24h,7d,14d",
     }
   );
 

@@ -94,7 +94,7 @@ const CurrencyItem = ({ data }) => {
             ${data.current_price.toLocaleString()}
           </span>
           <span className="font-roboto font-light text-sm text-tara-fifth">
-            {data.price_change_percentage_24h_in_currency.toFixed(2)}%
+            {data.price_change_percentage_24h.toFixed(2)}%
           </span>
         </div>
         <div className="w-1/2 h-16">
