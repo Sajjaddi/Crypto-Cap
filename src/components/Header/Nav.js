@@ -12,7 +12,7 @@ const Nav = ({ navs }) => {
         ))}
       </nav>
       <LanguageSelector/>
-      <Link>Login</Link>
+      <Link href='/'>Login</Link>
     </>
   );
 };

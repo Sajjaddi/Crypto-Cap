@@ -1,3 +1,4 @@
+import CurrencyItem from "./CurrencyItem";
 import MarketTrend from "./MarketTrend";
 
-export { MarketTrend };
+export { MarketTrend, CurrencyItem };

@@ -52,7 +52,7 @@ const ResponsiveNav = ({ data}) => {
         <div className="flex justify-between items-center gap-x-4">
           <LanguageSelector />
           <Link
-            url={"/"}
+            href={"/"}
             primary
             className={"py-3 px-8 rounded-md w-fit"}
           >

@@ -1,7 +1,7 @@
 function Link({
   target = "_black",
-  url,
   children,
+  href,
   className,
   primary,
   secondary,
@@ -15,7 +15,7 @@ function Link({
   }`;
 
   return (
-    <a rel="noreferrer" target={target} {...rest} className={classes}>
+    <a href={href} rel="noreferrer" target={target} {...rest} className={classes}>
       {children}
     </a>
   );

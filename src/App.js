@@ -17,25 +17,25 @@ const App = () => {
 
   return (
     <div
-      className={`bg-tara-prime text-white ${
-        responsiveNav && "overflow-y-hidden"
+      className={`mb-60 bg-tara-prime text-white ${
+        responsiveNav && "h-screen"
       }`}
     >
       <header className="px-2 xs:px-4 py-2 flex justify-between items-center">
         <Header />
       </header>
       <main>
-        <div
+        <section
           className={`flex flex-col items-center gap-y-8 mt-10 relative ${firstBrightness} ${secondBrightness}`}
         >
           <Hero />
-        </div>
-        <div>
+        </section>
+        <section className="mt-24 px-2 xs:px-4">
           <MarketTrend />
-        </div>
-        <div>
+        </section>
+        <section>
           <MarketUpdate />
-        </div>
+        </section>
       </main>
       <footer>
         <Footer />

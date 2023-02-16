@@ -3,7 +3,7 @@ import { useState } from "react";
 import SiteContext from "./site-context";
 
 const SiteProvider = ({ children }) => {
-  const [responsiveNav, setResponsiveNav] = useState(true);
+  const [responsiveNav, setResponsiveNav] = useState(false);
   const [lang, setLang] = useState({
     current: "en",
     all: ["en", "fa"],

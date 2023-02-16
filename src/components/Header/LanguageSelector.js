@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TbWorld } from "react-icons/tb";
 
-import SiteContext from "../../store/site-context";
+import { SiteContext } from "../../store";
 
 const LanguageSelector = () => {
   const { lang, setLang } = useContext(SiteContext);
