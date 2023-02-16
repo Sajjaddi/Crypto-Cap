@@ -1,4 +1,5 @@
 import { Nav, ResponsiveNav } from "../Header";
+import { Button } from "../Shared";
 
 const Header = () => {
   const data = {
@@ -39,13 +40,11 @@ const Header = () => {
       <div className="lg:hidden">
         <ResponsiveNav data={data} />
       </div>
-      <h1 className="text-2xl">
+      <Button href='/' className="text-2xl lg:col-start-1">
         <span>{data.title.slice(0, -3)}</span>
         <span className="text-tara-second">{data.title.slice(-3)}</span>
-      </h1>
-      <div className="hidden lg:block">
-        <Nav navs={data.navs} />
-      </div>
+      </Button>
+      <Nav navs={data.navs} />
     </>
   );
 };

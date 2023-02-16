@@ -2,7 +2,7 @@ import { CurrencyItem } from "../MarketTrend";
 import { useFetchData , Skeleton} from "../Shared";
 
 const MarketTrend = () => {
-  const [isLoading, currencyList] = useFetchData(
+  const [isLoading,setIsLoading, currencyList] = useFetchData(
     "https://api.coingecko.com/api/v3/coins/markets",
     {
       vs_currency: "usd",
@@ -22,7 +22,7 @@ const MarketTrend = () => {
   return (
     <>
       <strong className="text-2xl font-medium">Market Trend</strong>
-      <ul className="mt-6 flex flex-col gap-y-6">{content}</ul>
+      <ul className="mt-6 grid sm:grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-x-2 xl:gap-x-6">{content}</ul>
     </>
   );
 };

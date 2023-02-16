@@ -3,72 +3,69 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: Raleway;
-    src: url('./fonts/Raleway-Black.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 900;
+  font-family: Raleway;
+  src: url("./fonts/Raleway-Black.woff") format("woff");
+  font-style: normal;
+  font-weight: 900;
 }
 @font-face {
-    font-family: Raleway;
-    src: url('./fonts/Raleway-ExtraBold.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 800;
+  font-family: Raleway;
+  src: url("./fonts/Raleway-ExtraBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 800;
 }
 @font-face {
-    font-family: Raleway;
-    src: url('./fonts/Raleway-SemiBold.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 700;
+  font-family: Raleway;
+  src: url("./fonts/Raleway-SemiBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
 }
 @font-face {
-    font-family: Raleway;
-    src: url('./fonts/Raleway-Medium.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 500;
+  font-family: Raleway;
+  src: url("./fonts/Raleway-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
 }
 @font-face {
-    font-family: Raleway;
-    src: url('./fonts/Raleway-Light.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 300;
+  font-family: Raleway;
+  src: url("./fonts/Raleway-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
 }
 @font-face {
-    font-family: 'Roboto';
-    src: url('./fonts/Roboto-Medium-webfont.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 500;
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Medium-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
 }
 @font-face {
-    font-family: 'Roboto';
-    src: url('./fonts/Roboto-Regular-webfont.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 400;
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Regular-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
 }
 @font-face {
-    font-family: 'Roboto';
-    src: url('./fonts/Roboto-Thin-webfont.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 100;
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Thin-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 100;
 }
 @font-face {
-    font-family: 'Roboto';
-    src: url('./fonts/Roboto-Light-webfont.woff')
-    format('woff');
-    font-style: normal;
-    font-weight: 300;
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Light-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
 }
 
-body{
-    font-family: Raleway;
+body {
+  font-family: Raleway;
 }
-.apexcharts-canvas{
-    background: transparent!important;
+.apexcharts-canvas {
+  background: transparent !important;
+}
+.custom-scroller::-webkit-scrollbar {
+  @apply bg-tara-fourth rounded h-2;
+}
+.custom-scroller::-webkit-scrollbar-thumb {
+  @apply bg-tara-secondBrightnessHero rounded;
 }

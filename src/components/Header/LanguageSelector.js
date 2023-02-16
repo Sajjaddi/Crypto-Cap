@@ -20,11 +20,11 @@ const LanguageSelector = () => {
   return (
     <div
       onClick={() => setIsOpenToSelect((prevState) => !prevState)}
-      className="select-none flex gap-x-2 cursor-pointer relative w-1/2 z-[1]"
+      className="select-none flex gap-x-2 cursor-pointer relative w-1/2 sm:w-1/3 lg:w-auto z-[1]"
     >
       <TbWorld className="text-xl" />
       <div className="gap-x-1 flex items-center">
-        <span className="font-light">{lang.current.toUpperCase()}</span>
+        <span className="font-light lg:text-sm">{lang.current.toUpperCase()}</span>
         <MdKeyboardArrowDown
           className={`text-xl transition duration-300 ${
             isOpenToSelect && "-rotate-180"

@@ -70,7 +70,7 @@ const CurrencyItem = ({ data }) => {
   return (
     <li className="bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] rounded-[18px] px-5">
       <div className="flex justify-between items-center py-[18px]">
-        <div className="flex items-center gap-x-3">
+        <div className="flex items-center gap-x-3 lg:gap-x-2 xl:gap-x-3">
           <img src={data.image} className="h-10 w-10" alt={data.name} />
           <span>{data.symbol.toUpperCase()}</span>
           <span className="text-tara-seventh bg-tara-sixth font-bold text-[9px] py-1 px-[6px] rounded-[6px]">

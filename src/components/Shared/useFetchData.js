@@ -3,29 +3,45 @@ import { useEffect, useState } from "react";
 
 const useFetchData = (url, params = {}, dependency = null) => {
   const [fetchData, setFetchData] = useState([]);
+  const [isFirst, setIsFirst] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const pause = (duration) => {
-    return new Promise((resolve) => {
-      setTimeout(resolve, duration);
-    });
-  };
-  const handleFetch = async () => {
-    setIsLoading(true);
-    await pause(2000)
-    const response = await axios.get(url, {
+
+  const handleFetch = () => {
+    if (isFirst) {
+      setIsLoading(false);
+    }
+    const response = axios.get(url, {
       params: params,
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-    const data = await response.data;
-    setFetchData(data);
+    response
+      .then((i) => {
+        console.log(i.data);
+        setFetchData(i.data || []);
+        if (isFirst) {
+          setIsLoading(false);
+        }
+        setIsFirst(false);
+      })
+      .catch((i) => {
+        if (isFirst) {
+          setIsLoading(false);
+        }
+      });
   };
 
   useEffect(() => {
-    handleFetch().then(() => {
-      setIsLoading(false);
-    });
+    handleFetch();
+    const reFetch = setInterval(() => {
+      handleFetch();
+      console.log("timeout");
+    }, 100000);
+    return () => clearInterval(reFetch);
   }, [dependency]);
 
-  return [isLoading, fetchData];
+  return [isLoading, setIsLoading, fetchData];
 };
 
 export default useFetchData;

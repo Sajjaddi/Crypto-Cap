@@ -9,9 +9,15 @@ const Hero = () => {
   };
   return (
     <>
-      <h2 className="text-2xl text-center px-2 xs:px-4">{data.title}</h2>
-      <p className="font-light px-10 text-center text-[15px]">{data.subtitle}</p>
-      <Button href={'/'} primary className={'py-4 px-6 rounded-[10px]'}>{data.buttonText}</Button>
+      <h2 className="text-2xl text-center px-2 xs:px-4 md:px-6 lg:px-8">
+        {data.title}
+      </h2>
+      <p className="font-light px-10 text-center text-[15px] lg:w-1/2">
+        {data.subtitle}
+      </p>
+      <Button href={"/"} primary className={"py-4 px-6 lg:px-8 rounded-[10px]"}>
+        {data.buttonText}
+      </Button>
     </>
   );
 };

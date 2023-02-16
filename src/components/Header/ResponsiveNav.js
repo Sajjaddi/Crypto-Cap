@@ -39,34 +39,36 @@ const ResponsiveNav = ({ data }) => {
         ></span>
       </div>
       <nav
-        className={`absolute z-10 py-4 px-2 overflow-hidden top-0 bottom-0 right-0 transition-all duration-[.4s] bg-tara-prime bg-opacity-50 backdrop-blur-md ${
+        className={`absolute overflow-hidden z-10 top-0 bottom-0 right-0 max-w-xs transition-all duration-[.4s] bg-tara-prime bg-opacity-50 backdrop-blur-md ${
           responsiveNav
             ? "translate-x-0 visible w-[80%] xs:w-[70%]"
-            : "invisible translate-x-full w-0"
+            : "invisible translate-x-[105%] w-0 p-0"
         }`}
       >
-        <h1 className="text-2xl mb-6">
-          <span>{data.title.slice(0, -3)}</span>
-          <span className="text-tara-second">{data.title.slice(-3)}</span>
-        </h1>
-        <div className="flex justify-between items-center gap-x-4">
-          <LanguageSelector />
-          <Button href={"/"} primary className={"py-3 px-8 rounded-md w-fit"}>
-            Login
+        <div className="py-4 px-2">
+          <Button href='/' className="text-2xl mb-6">
+            <span>{data.title.slice(0, -3)}</span>
+            <span className="text-tara-second">{data.title.slice(-3)}</span>
           </Button>
-        </div>
-        <div className="flex flex-col gap-y-8 justify-center items-center mt-16 [&>a]:border-b-2">
-          {data.navs.map((i) => (
-            <Button
-              className={
-                "hover:text-tara-second transition hover:border-tara-second"
-              }
-              key={i.id}
-              href={i.url}
-            >
-              {i.title}
+          <div className="flex justify-between items-center gap-x-4">
+            <LanguageSelector />
+            <Button href={"/"} primary className={"py-3 px-8 rounded-md w-fit"}>
+              Login
             </Button>
-          ))}
+          </div>
+          <div className="flex flex-col gap-y-8 justify-center items-center mt-16 [&>a]:border-b-2">
+            {data.navs.map((i) => (
+              <Button
+                className={
+                  "hover:text-tara-second transition hover:border-tara-second"
+                }
+                key={i.id}
+                href={i.url}
+              >
+                {i.title}
+              </Button>
+            ))}
+          </div>
         </div>
       </nav>
     </>

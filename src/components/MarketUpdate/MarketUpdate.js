@@ -7,26 +7,25 @@ const MarketUpdate = () => {
   const [category, setCategory] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);
-  const [isLoading, coinsData] = useFetchData(
+
+  console.log("run component top");
+  const [isLoading, setIsLoading, coinsData] = useFetchData(
     "https://api.coingecko.com/api/v3/coins/markets",
     category
       ? {
           vs_currency: "usd",
           category: category,
           sparkline: true,
-          per_page: 7,
         }
       : {
           vs_currency: "usd",
           sparkline: true,
-          per_page: 7,
         },
     category
   );
   const [searchedCoins, setSearchedCoins] = useState([]);
 
   useEffect(() => {
-    console.log(coinsData, searchedCoins);
     setSearchedCoins(coinsData);
   }, [coinsData]);
 
@@ -35,7 +34,9 @@ const MarketUpdate = () => {
       if (searchValue) {
         let coinsArray = [];
         coinsData.forEach((i) => {
-          if (coinsData[i.name.toLowerCase().indexOf(searchValue)]) {
+          if (
+            coinsData[i.name.toLowerCase().indexOf(searchValue.toLowerCase())]
+          ) {
             coinsArray.push(
               coinsData[i.name.toLowerCase().indexOf(searchValue)]
             );
@@ -51,12 +52,14 @@ const MarketUpdate = () => {
 
   return (
     <>
-      <CategoriesList
-        setIsTouched={setIsTouched}
-        setSearchValue={setSearchValue}
-        searchValue={searchValue}
-        setCategory={setCategory}
-      />
+      <div className="overflow-hidden">
+        <CategoriesList
+          setIsTouched={setIsTouched}
+          setSearchValue={setSearchValue}
+          searchValue={searchValue}
+          setCategory={setCategory}
+        />
+      </div>
 
       <CoinsList
         isLoading={isLoading}
