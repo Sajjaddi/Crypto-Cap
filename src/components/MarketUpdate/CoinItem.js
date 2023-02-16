@@ -43,7 +43,7 @@ const CoinItem = ({ data, index }) => {
     stroke: {
       colors: [
         function () {
-          if (data.price_change_percentage_24h_in_currency < 0) {
+          if (data.price_change_percentage_24h < 0) {
             return "#AE0000";
           } else {
             return "#0FAE96";
@@ -70,21 +70,15 @@ const CoinItem = ({ data, index }) => {
   return (
     <li className="bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] rounded-[18px] px-5">
       <div className="flex justify-between items-center py-[18px]">
-        <div className="flex items-center gap-x-3">
-          <span className="font-roboto text-tara-fifth text-sm">{index}</span>
-          <img src={data.image} className="h-10 w-10" alt={data.name} />
+        <div className="flex items-center gap-x-2 xs:gapx-3">
+          <span className="hidden xs:inline font-roboto text-tara-fifth text-sm">{index}</span>
+          <img src={data.image} className="h-9 xs:h-10 w-9 xs:w-10" alt={data.name} />
           <span className="capitalize">{data.name}</span>
-          <span className="border-l border-[#403A3A] pl-3 text-tara-fifth text-xs">
+          <span className="hidden xs:inline border-l border-[#403A3A] pl-3 text-tara-fifth text-xs">
             {data.symbol.toUpperCase()}
           </span>
         </div>
-        <Button
-          primary
-          href="/"
-          className={
-            "py-1 px-6 rounded-[10px]"
-          }
-        >
+        <Button primary href="/" className={"py-1 px-6 rounded-[10px]"}>
           Trade
         </Button>
       </div>

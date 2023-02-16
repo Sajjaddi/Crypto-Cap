@@ -4,7 +4,7 @@ import { SiteContext } from "../../store";
 import { LanguageSelector } from "../Header";
 import { Button } from "../Shared";
 
-const ResponsiveNav = ({ data}) => {
+const ResponsiveNav = ({ data }) => {
   const { responsiveNav, setResponsiveNav } = useContext(SiteContext);
 
   const handleResponsiveNav = () => {
@@ -41,7 +41,7 @@ const ResponsiveNav = ({ data}) => {
       <nav
         className={`absolute z-10 py-4 px-2 overflow-hidden top-0 bottom-0 right-0 transition-all duration-[.4s] bg-tara-prime bg-opacity-50 backdrop-blur-md ${
           responsiveNav
-            ? "translate-x-0 visible w-[70%]"
+            ? "translate-x-0 visible w-[80%] xs:w-[70%]"
             : "invisible translate-x-full w-0"
         }`}
       >
@@ -51,11 +51,7 @@ const ResponsiveNav = ({ data}) => {
         </h1>
         <div className="flex justify-between items-center gap-x-4">
           <LanguageSelector />
-          <Button
-            href={"/"}
-            primary
-            className={"py-3 px-8 rounded-md w-fit"}
-          >
+          <Button href={"/"} primary className={"py-3 px-8 rounded-md w-fit"}>
             Login
           </Button>
         </div>

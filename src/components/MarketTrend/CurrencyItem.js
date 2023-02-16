@@ -6,8 +6,6 @@ import { Button } from "../Shared";
 const CurrencyItem = ({ data }) => {
   const options = {
     chart: {
-      opacity: 0,
-      // foreColor: 'transparent',
       toolbar: {
         show: false,
       },
@@ -45,7 +43,7 @@ const CurrencyItem = ({ data }) => {
     stroke: {
       colors: [
         function () {
-          if (data.price_change_percentage_24h_in_currency < 0) {
+          if (data.price_change_percentage_24h < 0) {
             return "#AE0000";
           } else {
             return "#0FAE96";
