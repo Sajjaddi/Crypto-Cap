@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div
-      className={`mb-60 bg-tara-prime text-white ${
+      className={`bg-tara-prime text-white ${
         responsiveNav && "h-screen overflow-y-hidden"
       }`}
     >
@@ -37,7 +37,7 @@ const App = () => {
           <MarketUpdate />
         </section>
       </main>
-      <footer>
+      <footer className="mt-10 px-2 xs:px-4">
         <Footer />
       </footer>
     </div>
