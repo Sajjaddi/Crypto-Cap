@@ -7,54 +7,63 @@
   src: url("./fonts/Raleway-Black.woff") format("woff");
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
 }
 @font-face {
   font-family: Raleway;
   src: url("./fonts/Raleway-ExtraBold.woff") format("woff");
   font-style: normal;
   font-weight: 800;
+  font-display: swap;
 }
 @font-face {
   font-family: Raleway;
   src: url("./fonts/Raleway-SemiBold.woff") format("woff");
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
 }
 @font-face {
   font-family: Raleway;
   src: url("./fonts/Raleway-Medium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
 }
 @font-face {
   font-family: Raleway;
   src: url("./fonts/Raleway-Light.woff") format("woff");
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Medium-webfont.woff") format("woff");
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Regular-webfont.woff") format("woff");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Thin-webfont.woff") format("woff");
   font-style: normal;
   font-weight: 100;
+  font-display: swap;
 }
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Light-webfont.woff") format("woff");
   font-style: normal;
   font-weight: 300;
+  font-display: swap;
 }
 
 body {
@@ -67,5 +76,5 @@ body {
   @apply bg-tara-fourth rounded h-2;
 }
 .custom-scroller::-webkit-scrollbar-thumb {
-  @apply bg-tara-secondBrightnessHero rounded;
+  @apply transition bg-tara-secondBrightnessHero rounded hover:backdrop-brightness-110;
 }

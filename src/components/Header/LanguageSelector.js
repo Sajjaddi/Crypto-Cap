@@ -40,7 +40,7 @@ const LanguageSelector = () => {
       >
         {lang?.all.map((i, index) => (
           <span
-            className={`py-1 hover:bg-brightness-[1.2] transition text-sm`}
+            className={`py-1.5 hover:bg-brightness-[1.2] transition text-sm`}
             onClick={() => handleSelector(i)}
             key={index}
           >

@@ -7,45 +7,53 @@ const MarketUpdate = () => {
   const [category, setCategory] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);
+  const [searchedCoins, setSearchedCoins] = useState([]);
 
-  console.log("run component top");
   const [isLoading, setIsLoading, coinsData] = useFetchData(
     "https://api.coingecko.com/api/v3/coins/markets",
-    category
-      ? {
-          vs_currency: "usd",
-          category: category,
-          sparkline: true,
-        }
-      : {
-          vs_currency: "usd",
-          sparkline: true,
-        },
+    {
+      vs_currency: "usd",
+      category: category ? category : null,
+      sparkline: true,
+    },
+    // dependency for refetch data = category
     category
   );
-  const [searchedCoins, setSearchedCoins] = useState([]);
+
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
+    setIsTouched(true);
+  };
+
+  const handleCategory = (cat) => {
+    setIsLoading(true);
+    setCategory(cat);
+    setSearchValue("");
+  };
 
   useEffect(() => {
     setSearchedCoins(coinsData);
+    setIsLoading(false);
   }, [coinsData]);
 
   useEffect(() => {
     const timeSearch = setTimeout(() => {
       if (searchValue) {
         let coinsArray = [];
-        coinsData.forEach((i) => {
+        coinsData.forEach((i, index) => {
           if (
             coinsData[i.name.toLowerCase().indexOf(searchValue.toLowerCase())]
           ) {
-            coinsArray.push(
-              coinsData[i.name.toLowerCase().indexOf(searchValue)]
-            );
+            coinsArray.push(coinsData[index]);
           }
         });
         setSearchedCoins(coinsArray);
       } else if (searchValue === "" && isTouched) {
+        // when user clear search bar => list all coins again
         setSearchedCoins(coinsData);
       }
+
+      // every 0.5s user do not type any words => change list (+performance)
     }, 500);
     return () => clearTimeout(timeSearch);
   }, [searchValue]);
@@ -54,17 +62,17 @@ const MarketUpdate = () => {
     <>
       <div className="overflow-hidden">
         <CategoriesList
-          setIsTouched={setIsTouched}
-          setSearchValue={setSearchValue}
           searchValue={searchValue}
+          handleCategory={handleCategory}
+          handleSearch={handleSearch}
           setCategory={setCategory}
         />
       </div>
-
       <CoinsList
+        category={category}
+        setIsLoading={setIsLoading}
         isLoading={isLoading}
         coinsData={searchedCoins}
-        category={category}
       />
     </>
   );

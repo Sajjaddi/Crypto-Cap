@@ -12,20 +12,18 @@ const useFetchData = (url, params = {}, dependency = null) => {
     }
     const response = axios.get(url, {
       params: params,
-      headers: {
-        "Content-Type": "application/json",
-      },
     });
     response
       .then((i) => {
-        console.log(i.data);
         setFetchData(i.data || []);
+
+        // for when every 10s reFetch don't loader show in UI just for first time.
         if (isFirst) {
           setIsLoading(false);
         }
         setIsFirst(false);
       })
-      .catch((i) => {
+      .catch(() => {
         if (isFirst) {
           setIsLoading(false);
         }
@@ -36,8 +34,7 @@ const useFetchData = (url, params = {}, dependency = null) => {
     handleFetch();
     const reFetch = setInterval(() => {
       handleFetch();
-      console.log("timeout");
-    }, 100000);
+    }, 10000);
     return () => clearInterval(reFetch);
   }, [dependency]);
 

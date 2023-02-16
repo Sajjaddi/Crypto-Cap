@@ -45,8 +45,8 @@ const ResponsiveNav = ({ data }) => {
             : "invisible translate-x-[105%] w-0 p-0"
         }`}
       >
-        <div className="py-4 px-2">
-          <Button href='/' className="text-2xl mb-6">
+        <div className="py-4 px-2 sm:px-4">
+          <Button href="/" className="text-2xl mb-6">
             <span>{data.title.slice(0, -3)}</span>
             <span className="text-tara-second">{data.title.slice(-3)}</span>
           </Button>

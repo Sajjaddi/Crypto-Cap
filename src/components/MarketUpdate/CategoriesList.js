@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,27 +8,18 @@ import { Skeleton, useFetchData } from "../Shared";
 
 const CategoriesList = ({
   setCategory,
-  setSearchValue,
+  handleSearch,
+  handleCategory,
   searchValue,
-  setIsTouched,
 }) => {
   const [isShowMoreCategories, setIsShowMoreCategories] = useState(false);
-  const [isLoading, _, categories] = useFetchData(
+  const [isLoading, setIsLoading, categories] = useFetchData(
     "https://api.coingecko.com/api/v3/coins/categories"
   );
 
-  const handleSeach = (e) => {
-    setSearchValue(e.target.value);
-    setIsTouched(true);
-  };
-
-  const handleCategory = (cat) => {
-    setCategory(cat);
-  };
-
   return (
     <>
-      <span className="px-2 xs:px-4 md:px-6 lg:px-8 text-2xl font-medium">
+      <span className="px-2 xs:px-4 md:px-6 lg:px-8 text-xl font-medium">
         Market Update
       </span>
       <div className="mt-10">
@@ -56,7 +47,7 @@ const CategoriesList = ({
                   500: {
                     slidesPerView: 2.0,
                   },
-                  700: {
+                  640: {
                     slidesPerView: 2.5,
                   },
                   900: {
@@ -67,7 +58,7 @@ const CategoriesList = ({
                 <SwiperSlide>
                   <div
                     className={
-                      "bg-white flex cursor-pointer items-center text-tara-fourth py-[10px] font-bold px-3 rounded-[6px] w-full hover:bg-tara-secondBrightnessHero transition hover:text-white"
+                      "bg-white flex cursor-pointer items-center text-xs md:text-sm text-tara-fourth py-[10px] font-bold px-3 rounded-[6px] w-full hover:bg-tara-secondBrightnessHero transition hover:text-white"
                     }
                     onClick={() => setCategory("")}
                   >
@@ -100,7 +91,6 @@ const CategoriesList = ({
                 className={`${
                   isShowMoreCategories && "hidden"
                 } py-[10px] px-3 text-sm h-fit min-w-fit cursor-pointer text-fifth bg-[rgba(255,255,255,0.05)] rounded-[6px] border border-[rgba(255,255,255,0.05)] transition group-hover:bg-tara-fourth`}
-                secondary
               >
                 See All{" "}
                 <span className="font-roboto">{categories.length - 5}</span> +
@@ -110,8 +100,8 @@ const CategoriesList = ({
               <BiSearch className="text-tara-fifth text-2xl absolute left-[10px] top-1/2 translate-y-[-50%]" />
               <input
                 value={searchValue}
-                onChange={handleSeach}
-                className="bg-transparent text-tara-fifth pl-10 w-full h-full p-[10px] lg:py-3 focus:border-none focus:outline-tara-second"
+                onChange={handleSearch}
+                className="bg-transparent text-tara-fifth text-sm sm:text-base pl-10 w-full h-full p-[10px] lg:py-3 focus:border-none focus:outline-tara-secondBrightnessHero focus:outline-opacity-"
                 type={"text"}
                 placeholder="Search Coin"
               />
@@ -123,5 +113,4 @@ const CategoriesList = ({
   );
 };
 
-const MemorizedCategoriesList = React.memo(CategoriesList);
-export default MemorizedCategoriesList;
+export default CategoriesList;

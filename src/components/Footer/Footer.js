@@ -83,7 +83,7 @@ const Footer = () => {
               }
             })}
           </div>
-          <p className="lg:border-none text-tara-fifth font-roboto text-sm border-t border-tara-fifth border-opacity-40 py-2">
+          <p className="lg:border-none text-tara-fifth font-roboto text-[13px] border-t border-tara-fifth border-opacity-40 py-2">
             {data.copyright}
           </p>
         </div>
@@ -129,7 +129,9 @@ const Footer = () => {
             <div className="text-center flex flex-col gap-y-4">
               {i.navs.map((child) => (
                 <Button
-                  className={"text-tara-fifth flex text-sm justify-center transition hover:text-tara-second"}
+                  className={
+                    "text-tara-fifth flex text-sm justify-center transition hover:text-tara-second"
+                  }
                   key={child.id}
                   href={child.url}
                 >
@@ -140,7 +142,7 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <p className="lg:border-none text-tara-fifth lg:hidden font-roboto text-sm mt-20 border-t border-tara-fifth border-opacity-40 py-2">
+      <p className="lg:border-none text-tara-fifth lg:hidden font-roboto text-xs mt-20 border-t border-tara-fifth border-opacity-40 py-2">
         {data.copyright}
       </p>
     </>

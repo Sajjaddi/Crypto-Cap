@@ -72,7 +72,9 @@ const CurrencyItem = ({ data }) => {
       <div className="flex justify-between items-center py-[18px]">
         <div className="flex items-center gap-x-3 lg:gap-x-2 xl:gap-x-3">
           <img src={data.image} className="h-10 w-10" alt={data.name} />
-          <span>{data.symbol.toUpperCase()}</span>
+          <span className="text-sm sm:text-base">
+            {data.symbol.toUpperCase()}
+          </span>
           <span className="text-tara-seventh bg-tara-sixth font-bold text-[9px] py-1 px-[6px] rounded-[6px]">
             {data.name.toUpperCase()}
           </span>
@@ -88,7 +90,7 @@ const CurrencyItem = ({ data }) => {
       </div>
       <div className="border-t border-[#ECF1F0] border-opacity-5 py-[18px] flex items-start">
         <div className="w-1/2 flex flex-col justify-between gap-y-1 h-16">
-          <span className="font-roboto text-xl">
+          <span className="font-roboto sm:text-lg">
             ${data.current_price.toLocaleString()}
           </span>
           <span className="font-roboto font-light text-sm text-tara-fifth">
