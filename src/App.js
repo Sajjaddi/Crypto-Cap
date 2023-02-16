@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div
       className={`mb-60 bg-tara-prime text-white ${
-        responsiveNav && "h-screen"
+        responsiveNav && "h-screen overflow-y-hidden"
       }`}
     >
       <header className="px-2 xs:px-4 py-2 flex justify-between items-center">
@@ -33,7 +33,7 @@ const App = () => {
         <section className="mt-24 px-2 xs:px-4">
           <MarketTrend />
         </section>
-        <section>
+        <section className="mt-24">
           <MarketUpdate />
         </section>
       </main>

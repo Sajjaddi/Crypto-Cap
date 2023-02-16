@@ -1,18 +1,18 @@
 import { LanguageSelector } from "../Header";
-import { Link } from "../Shared";
+import { Button } from "../Shared";
 
 const Nav = ({ navs }) => {
   return (
     <>
       <nav className="">
         {navs.map((i) => (
-          <Link key={i.id} href={i.url}>
+          <Button key={i.id} href={i.url}>
             {i.title}
-          </Link>
+          </Button>
         ))}
       </nav>
       <LanguageSelector/>
-      <Link href='/'>Login</Link>
+      <Button href='/'>Login</Button>
     </>
   );
 };

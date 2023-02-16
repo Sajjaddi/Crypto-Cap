@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { SiteContext } from "../../store";
 import { LanguageSelector } from "../Header";
-import { Link } from "../Shared";
+import { Button } from "../Shared";
 
 const ResponsiveNav = ({ data}) => {
   const { responsiveNav, setResponsiveNav } = useContext(SiteContext);
@@ -51,17 +51,17 @@ const ResponsiveNav = ({ data}) => {
         </h1>
         <div className="flex justify-between items-center gap-x-4">
           <LanguageSelector />
-          <Link
+          <Button
             href={"/"}
             primary
             className={"py-3 px-8 rounded-md w-fit"}
           >
             Login
-          </Link>
+          </Button>
         </div>
         <div className="flex flex-col gap-y-8 justify-center items-center mt-16 [&>a]:border-b-2">
           {data.navs.map((i) => (
-            <Link
+            <Button
               className={
                 "hover:text-tara-second transition hover:border-tara-second"
               }
@@ -69,7 +69,7 @@ const ResponsiveNav = ({ data}) => {
               href={i.url}
             >
               {i.title}
-            </Link>
+            </Button>
           ))}
         </div>
       </nav>

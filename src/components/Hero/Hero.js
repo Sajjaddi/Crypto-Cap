@@ -1,4 +1,4 @@
-import { Link } from "../Shared";
+import { Button } from "../Shared";
 
 const Hero = () => {
   const data = {
@@ -11,7 +11,7 @@ const Hero = () => {
     <>
       <h2 className="text-2xl text-center px-2 xs:px-4">{data.title}</h2>
       <p className="font-light px-10 text-center text-[15px]">{data.subtitle}</p>
-      <Link href={'/'} primary className={'py-4 px-6 rounded-[10px]'}>{data.buttonText}</Link>
+      <Button href={'/'} primary className={'py-4 px-6 rounded-[10px]'}>{data.buttonText}</Button>
     </>
   );
 };
