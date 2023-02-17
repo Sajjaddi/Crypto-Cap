@@ -22,7 +22,7 @@ const App = () => {
           <AiOutlineLoading3Quarters className="text-7xl animate-spin" />
           <div className="ml-4 flex items-center flex-col md:items-start">
             <span className="text-xl">Please wait ...</span>
-            <span className="text-tara-sixth">It may take up to 1 minute for the API</span>
+            <span className="text-tara-sixth">It may take up to <span className="font-roboto">1</span> minute for the API</span>
           </div>
         </div>
       ) : null}

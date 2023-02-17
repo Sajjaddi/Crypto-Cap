@@ -96,7 +96,7 @@ const CategoriesList = ({
                 <span className="font-roboto">{categories.length - 5}</span> +
               </div>
             </div>
-            <div className="mt-4 xl:ml-0 xl:mt-0 xl:h-10 mx-2 xs:mx-4 lg:mx-8 relative bg-[#160C24] border border-[rgba(255,255,255,0.1)] rounded-md">
+            <div className="mt-4 xl:ml-0 xl:mt-0 xl:h-10 mx-2 xs:mx-4 md:mx-6 lg:mx-8 relative bg-[#160C24] border border-[rgba(255,255,255,0.1)] rounded-md">
               <BiSearch className="text-tara-fifth text-2xl absolute left-[10px] top-1/2 translate-y-[-50%]" />
               <input
                 value={searchValue}
