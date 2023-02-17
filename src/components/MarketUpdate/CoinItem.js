@@ -8,6 +8,9 @@ const CoinItem = ({ data, index, last, isShowMoreCoins }) => {
       toolbar: {
         show: false,
       },
+      animations: {
+        enabled: false,
+      },
     },
     yaxis: {
       show: false,
@@ -79,12 +82,22 @@ const CoinItem = ({ data, index, last, isShowMoreCoins }) => {
               className="h-9 xs:h-10 w-9 xs:w-10"
               alt={data?.name}
             />
-            <span className="capitalize sm:text-base text-sm">{data?.name}</span>
-            <span className={`${isShowMoreCoins && 'hidden sm:inline'} hidden xs:inline border-l border-[#403A3A] pl-3 text-tara-fifth text-xs`}>
+            <span className="capitalize sm:text-base text-sm">
+              {data?.name}
+            </span>
+            <span
+              className={`${
+                isShowMoreCoins && "hidden sm:inline"
+              } hidden xs:inline border-l border-[#403A3A] pl-3 text-tara-fifth text-xs`}
+            >
               {data?.symbol.toUpperCase()}
             </span>
           </div>
-          <Button primary href="/" className={"py-1 px-6 rounded-[10px] text-sm md:text-base"}>
+          <Button
+            primary
+            href="/"
+            className={"py-1 px-6 rounded-[10px] text-sm md:text-base"}
+          >
             Trade
           </Button>
         </div>

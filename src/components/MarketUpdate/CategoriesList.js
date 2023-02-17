@@ -60,7 +60,7 @@ const CategoriesList = ({
                     className={
                       "bg-white flex cursor-pointer items-center text-xs md:text-sm text-tara-fourth py-[10px] font-bold px-3 rounded-[6px] w-full hover:bg-tara-secondBrightnessHero transition hover:text-white"
                     }
-                    onClick={() => setCategory("")}
+                    onClick={() => handleCategory("")}
                   >
                     Popular
                   </div>
@@ -77,7 +77,7 @@ const CategoriesList = ({
                 className={
                   "bg-white flex cursor-pointer w-auto items-center text-tara-fourth py-[10px] font-bold px-3 rounded-[6px] text-sm hover:bg-tara-secondBrightnessHero transition hover:text-white h-fit"
                 }
-                onClick={() => setCategory("")}
+                onClick={() => handleCategory("")}
               >
                 Popular
               </div>

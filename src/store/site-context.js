@@ -2,8 +2,8 @@ import React from "react";
 
 const SiteContext = React.createContext({
   cryptoData: {},
-  firstErrorFetch: false,
-  setFirstErrorFetch: () => {},
+  errorFetch: false,
+  setErrorFetch: () => {},
   lang: {},
   responsiveNav: null,
   setResponsiveNav: () => {},

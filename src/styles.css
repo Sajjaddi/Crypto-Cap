@@ -78,10 +78,3 @@ body {
 .custom-scroller::-webkit-scrollbar-thumb {
   @apply transition bg-tara-secondBrightnessHero rounded hover:backdrop-brightness-110;
 }
-
-.before-x {
-  transform: translateX(100%);
-}
-.after-x {
-  transform: translateX(0%);
-}

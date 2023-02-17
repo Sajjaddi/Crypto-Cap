@@ -9,7 +9,11 @@ const CurrencyItem = ({ data }) => {
       toolbar: {
         show: false,
       },
+      animations: {
+        enabled: false
+      },
     },
+    
     yaxis: {
       show: false,
     },

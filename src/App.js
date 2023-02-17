@@ -9,15 +9,15 @@ import { MarketUpdate } from "./components/MarketUpdate";
 import { SiteContext } from "./store";
 
 const App = () => {
-  const { firstErrorFetch, responsiveNav } = useContext(SiteContext);
+  const { errorFetch, responsiveNav } = useContext(SiteContext);
 
   return (
     <div
       className={`bg-tara-prime text-white overflow-x-hidden relative  ${
-        responsiveNav || (firstErrorFetch && "max-h-screen overflow-y-hidden")
+        responsiveNav || (errorFetch && "max-h-screen overflow-y-hidden")
       }`}
     >
-      {firstErrorFetch ? (
+      {errorFetch ? (
         <div className="flex-col md:flex-row gap-y-6 w-full h-full inset-0 backdrop-blur-xl absolute z-20 justify-center items-center flex">
           <AiOutlineLoading3Quarters className="text-7xl animate-spin" />
           <div className="ml-4 flex items-center flex-col md:items-start">

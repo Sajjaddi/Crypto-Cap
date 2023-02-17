@@ -4,15 +4,15 @@ import SiteContext from "./site-context";
 
 const SiteProvider = ({ children }) => {
   const [responsiveNav, setResponsiveNav] = useState(false);
-  const [firstErrorFetch, setFirstErrorFetch] = useState(false);
+  const [errorFetch, setErrorFetch] = useState(false);
   const [lang, setLang] = useState({
     current: "en",
     all: ["en", "fa"],
   });
 
   const siteContext = {
-    firstErrorFetch,
-    setFirstErrorFetch,
+    errorFetch,
+    setErrorFetch,
     responsiveNav,
     setResponsiveNav,
     lang,

@@ -8,7 +8,7 @@ const useFetchData = (url, params = {}, dependency = null) => {
   const [isFirst, setIsFirst] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { setFirstErrorFetch } = useContext(SiteContext);
+  const { setErrorFetch } = useContext(SiteContext);
 
   const handleFetch = () => {
     const response = axios.get(url, {
@@ -16,21 +16,19 @@ const useFetchData = (url, params = {}, dependency = null) => {
     });
     response
       .then((i) => {
-        setFetchData(i.data || []);
+        setFetchData(i.data);
 
         // for when every 10s reFetch don't loader show in UI just for first time.
         if (isFirst) {
           setIsLoading(false);
         }
-        setIsFirst(false);
-        setFirstErrorFetch(false)
+        setErrorFetch(false);
       })
       .catch(() => {
-        if (isFirst) {
-          setFirstErrorFetch(true)
-          setIsLoading(false);
-        }
+        setErrorFetch(true);
+        setIsLoading(false);
       });
+    setIsFirst(false);
   };
 
   useEffect(() => {
