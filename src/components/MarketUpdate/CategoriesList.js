@@ -90,7 +90,7 @@ const CategoriesList = ({
                 onClick={() => setIsShowMoreCategories(true)}
                 className={`${
                   isShowMoreCategories && "hidden"
-                } py-[10px] px-3 text-sm h-fit min-w-fit cursor-pointer text-fifth bg-[rgba(255,255,255,0.05)] rounded-[6px] border border-[rgba(255,255,255,0.05)] transition group-hover:bg-tara-fourth`}
+                } py-[10px] px-3 text-sm h-fit min-w-fit cursor-pointer text-fifth bg-[rgba(255,255,255,0.05)] rounded-[6px] border border-[rgba(255,255,255,0.05)] transition hover:bg-tara-fourth`}
               >
                 See All{" "}
                 <span className="font-roboto">{categories.length - 5}</span> +
