@@ -14,7 +14,7 @@ const ResponsiveNav = ({ data }) => {
   return (
     <>
       <div
-        className={`absolute h-full w-full inset-0 z-[5] backdrop-blur-sm select-none ${
+        className={`absolute h-full w-full inset-0 z-[5] backdrop-blur-md select-none ${
           responsiveNav ? "visible" : "invisible"
         }`}
       />
@@ -39,10 +39,8 @@ const ResponsiveNav = ({ data }) => {
         ></span>
       </div>
       <nav
-        className={`absolute overflow-hidden z-10 top-0 bottom-0 right-0 max-w-xs transition-all duration-[.4s] bg-tara-prime bg-opacity-50 backdrop-blur-md ${
-          responsiveNav
-            ? "translate-x-0 visible w-[80%] xs:w-[70%]"
-            : "invisible translate-x-[105%] w-0 p-0"
+        className={`absolute overflow-hidden z-10 w-[80%] xs:w-[70%] transition-all duration-[0.4s] inset-y-0 right-0 max-w-xs bg-tara-prime bg-opacity-50  ${
+          responsiveNav ? " after-x " : " before-x "
         }`}
       >
         <div className="py-4 px-2 sm:px-4">

@@ -40,7 +40,7 @@ const Header = () => {
       <div className="lg:hidden">
         <ResponsiveNav data={data} />
       </div>
-      <Button href='/' className="text-2xl lg:col-start-1">
+      <Button href='/' className="text-2xl lg:col-start-1 z-[1]">
         <span>{data.title.slice(0, -3)}</span>
         <span className="text-tara-second">{data.title.slice(-3)}</span>
       </Button>

@@ -10,27 +10,22 @@ import { SiteContext } from "./store";
 const App = () => {
   const { responsiveNav } = useContext(SiteContext);
 
-  const firstBrightness =
-    "after:content-[''] after:absolute after:right-0 after:h-full after:md:right-[20%] after:2xl:right-[28%] after:lg:h-3/4 after:w-1/4 after:blur-[200px] md:after:blur-[220px] after:bg-tara-firstBrightnessHero";
-  const secondBrightness =
-    "before:content-[''] before:absolute before:left-0 before:md:left-[20%] before:2xl:right-[28%] before:h-full before:lg:h-3/4 before:w-1/4 before:blur-[200px] md:before:blur-[220px] before:bg-tara-secondBrightnessHero";
-
   return (
     <div
-      className={`bg-tara-prime text-white relative  ${
-        responsiveNav && "h-screen overflow-y-hidden"
+      className={`bg-tara-prime text-white overflow-x-hidden relative  ${
+        responsiveNav && "max-h-screen overflow-y-hidden"
       }`}
     >
       <header className="px-2 xs:px-4 md:px-6 lg:px-8 mx-auto max-w-8xl lg:py-4 py-2 flex justify-between items-center lg:grid lg:grid-cols-12">
         <Header />
       </header>
-      <main>
+      <main className="z-1">
         <section
-          className={`flex flex-col items-center gap-y-8 mt-10 lg:mt-20 relative ${firstBrightness} ${secondBrightness}`}
+          className={`flex flex-col items-center gap-y-8 mt-10 lg:mt-20 relative`}
         >
           <Hero />
         </section>
-        <section className="mt-24 px-2 xs:px-4 md:px-6 lg:px-8 max-w-8xl mx-auto">
+        <section className="mt-24 px-2 xs:px-4 md:px-6 lg:px-8 max-w-8xl mx-auto z-[1] relative">
           <MarketTrend />
         </section>
         <section className="mt-24 mx-auto max-w-8xl">
