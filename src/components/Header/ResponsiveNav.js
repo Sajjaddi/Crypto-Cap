@@ -40,7 +40,7 @@ const ResponsiveNav = ({ data }) => {
       </div>
       <nav
         className={`absolute overflow-hidden z-10 w-[80%] xs:w-[70%] transition-all duration-[0.4s] inset-y-0 right-0 max-w-xs bg-tara-prime bg-opacity-50  ${
-          responsiveNav ? " after-x translate-x-full" : "translate-x-0"
+          responsiveNav ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="py-4 px-2 sm:px-4">
