@@ -1,15 +1,16 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
+import { SiteContext } from "../../store";
 
 const useFetchData = (url, params = {}, dependency = null) => {
   const [fetchData, setFetchData] = useState([]);
   const [isFirst, setIsFirst] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const { setFirstErrorFetch } = useContext(SiteContext);
 
   const handleFetch = () => {
-    if (isFirst) {
-      setIsLoading(false);
-    }
     const response = axios.get(url, {
       params: params,
     });
@@ -22,9 +23,11 @@ const useFetchData = (url, params = {}, dependency = null) => {
           setIsLoading(false);
         }
         setIsFirst(false);
+        setFirstErrorFetch(false)
       })
       .catch(() => {
         if (isFirst) {
+          setFirstErrorFetch(true)
           setIsLoading(false);
         }
       });

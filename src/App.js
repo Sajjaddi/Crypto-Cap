@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -8,14 +9,23 @@ import { MarketUpdate } from "./components/MarketUpdate";
 import { SiteContext } from "./store";
 
 const App = () => {
-  const { responsiveNav } = useContext(SiteContext);
+  const { firstErrorFetch, responsiveNav } = useContext(SiteContext);
 
   return (
     <div
       className={`bg-tara-prime text-white overflow-x-hidden relative  ${
-        responsiveNav && "max-h-screen overflow-y-hidden"
+        responsiveNav || (firstErrorFetch && "max-h-screen overflow-y-hidden")
       }`}
     >
+      {firstErrorFetch ? (
+        <div className="flex-col md:flex-row gap-y-6 w-full h-full inset-0 backdrop-blur-xl absolute z-20 justify-center items-center flex">
+          <AiOutlineLoading3Quarters className="text-7xl animate-spin" />
+          <div className="ml-4 flex items-center flex-col md:items-start">
+            <span className="text-xl">Please wait ...</span>
+            <span className="text-tara-sixth">It may take up to 1 minute for the API</span>
+          </div>
+        </div>
+      ) : null}
       <header className="px-2 xs:px-4 md:px-6 lg:px-8 mx-auto max-w-8xl lg:py-4 py-2 flex justify-between items-center lg:grid lg:grid-cols-12">
         <Header />
       </header>

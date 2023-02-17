@@ -14,9 +14,13 @@ module.exports = {
       keyframes: {
         shimmer: {
           "100%": { transform: "translateX(100%)" },
-        }
+        },
+        spin: {
+          "100%": { rotate: "360deg" },
+        },
       },
       animation: {
+        spin: "spin 2s infinite",
         shimmer: "shimmer 1.5s infinite",
       },
       fontFamily: {

@@ -69,6 +69,7 @@ const MarketUpdate = () => {
         />
       </div>
       <CoinsList
+        isTouched={isTouched}
         category={category}
         setIsLoading={setIsLoading}
         isLoading={isLoading}
