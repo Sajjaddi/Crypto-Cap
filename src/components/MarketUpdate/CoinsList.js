@@ -27,7 +27,7 @@ const CoinsList = ({ category, coinsData, isLoading, setIsLoading }) => {
     >
       {isLoading ? (
         <Skeleton
-          className={"w-full rounded-[18px] h-16 lg:rounded-[4px]"}
+          className={"w-full rounded-[18px] h-40 lg:h-16 lg:rounded-[4px]"}
           times={7}
         />
       ) : (
